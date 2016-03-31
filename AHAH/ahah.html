@@ -311,18 +311,40 @@
 <script src="../../petal/js/all.js"></script>
 <script src="../../petal/js/improved.js"></script>
 <script>
-$(document).ready(function(e) {
 
+
+//selecting the flower-items
 var $flowers = $('#flower-items');
 
+//if the Flower-items contains the anchor tag and click on 
 $('#flower-items').find('a').on('click', function(e){
-	e.preventDefault();
-
 	
+	//Prevanting the Default
+	e.preventDefault();
+	
+	//descripton to load in the dive
+	var $desc = $('#flower-description');
+	
+	//if the anchor tag attribute href contains the 
+	switch($(this).attr('href')) {
+	//call the calla.html
+		case 'calla.html' :
+			//load the pages from the fragments folder
+			$desc.load('fragments/lilies.html');
+			break;
+
+		case 'sunflowers.html' :
+			$desc.load('fragments/sunflower.html');
+			break;
+		case 'iris.html' :
+			$desc.load('fragments/irises.html');
+			break;
+		case 'alstromeria.html' :
+			$desc.load('fragments/peruvian.html');
+			break;
+	}
 });
 
-
-});
 </script>
 
 </body>
